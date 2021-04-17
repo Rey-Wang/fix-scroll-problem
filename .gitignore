@@ -1,0 +1,22 @@
+# files to ignore
+npm-debug.log
+yarn-error.log
+*.iml
+*.swp
+*.swo
+.DS_Store
+.vscode
+.idea
+api-types.js
+swagger.json
+cypress/integration/examples/*
+test-report.xml
+
+# dirs to ignore
+node_modules
+coverage
+build
+.eslintcache
+.expo
+.out
+storybook-static

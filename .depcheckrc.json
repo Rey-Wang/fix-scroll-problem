@@ -1,0 +1,14 @@
+{
+  "ignores": [
+    "eslint-*",
+    "stylelint-*",
+    "@typescript-eslint/*",
+    "@babel/*",
+    "postcss-*",
+    "jest*",
+    "@types/*",
+    "*-loader"
+  ],
+  "skip-missing": true,
+  "ignore-bin-package": true
+}

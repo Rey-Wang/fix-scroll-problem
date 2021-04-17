@@ -1,0 +1,30 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+       "equipment/*": ["apps/equipment/*"],
+      "trips/*": ["apps/trips/*"],
+      "lib/*": ["lib/*"],
+      "shippers/*": ["apps/shippers/*"],
+      "shipper-portal/*": ["apps/shipper-portal/*"],
+      "managed-carrier-portal/*": [
+        "apps/managed-carrier-portal/*"
+      ]
+    },
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "typeRoots": ["src/lib/@types", "node_modules/@types"],
+    "lib": ["ES2015", "ES2016", "DOM"],
+    "downlevelIteration": true
+  },
+  // TODO: Figure out how to make tsc play nice with the cypress tests
+  // (ex. have it respect the tsconfig in it's own dir)
+  "exclude": [
+    "cypress"
+  ]
+}

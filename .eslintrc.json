@@ -1,0 +1,131 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "css-modules",
+    "jest",
+    "prettier",
+    "react-hooks",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "prettier",
+    "prettier/standard",
+    "prettier/react"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "babel-module": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src", "src/apps"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<roo/>@types` directory even it doesn't contain any source code, like `@types/unist`
+        "directory": "./tsconfig.json"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "stories/**/*.ts",
+        "stories/**/*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "no-redeclare": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": [
+          "warn",
+          { "functions": false }
+        ]
+      },
+      "settings": {
+        "import/ignore": [
+          "\\.js$" // Avoid trying to parse imported JS files because they may contain Flow syntax that will fail
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "no-console": 1,
+    "no-var": "error",
+    "prefer-const": "error",
+    "object-curly-spacing": ["error", "always"],
+    "camelcase": 0,
+    "operator-linebreak": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "object-shorthand": ["error", "always"],
+    "prefer-promise-reject-errors": 2,
+    "jsx-quotes": [2, "prefer-double"],
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 2,
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/react-in-jsx-scope": 2,
+    "react/prefer-stateless-function": 2,
+    "react/no-unknown-property": 2,
+    "react/no-unescaped-entities": 2,
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-tag-spacing": 2,
+    "react/jsx-curly-spacing": 2,
+    "css-modules/no-undef-class": 2,
+    "jest/prefer-to-be-null": 2,
+    "jest/prefer-to-be-undefined": 2,
+    "jest/no-mocks-import": 0,
+    "jest/valid-expect-in-promise": 0,
+    "jest/no-conditional-expect": 0,
+    "jest/no-standalone-expect": 0,
+    "jest/no-try-expect": 0,
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-case-declarations": "off"
+  },
+  "globals": {
+    "SyntheticEvent": true,
+    "APP_ID": true,
+    "BASE_NAME": true,
+    "VERSION_STRING": true
+  }
+}
